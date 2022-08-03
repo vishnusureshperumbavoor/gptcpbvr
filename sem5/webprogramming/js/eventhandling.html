@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="" id="fuck">
+      <option value="opt1">option 1</option>
+      <option value="opt2">option 2</option>
+    </select>
+    <button onclick="alert('single clicked thsi shit')">single click</button>
+    <button ondblclick="alert('double clicked thsi shit')">double click</button>
+    <br /><br />
+    <form action="" id="temp2">
+      enter name <input type="text" /> enter crush name <input type="text" />
+      <input type="submit" />
+    </form>
+    <br /><br />
+    <button>
+      <a href="formvalidation.html" style="text-decoration: none; color: black"
+        >formvalidation</a
+      >
+    </button>
+    <button onclick="document.location='formvalidation.html'">
+      formvalidation
+    </button>
+    <button onclick="document.location='regularexpression.html'">
+      regularexpression
+    </button>
+    <button onclick="document.location='bootstrap.html'">
+      bootstrap
+    </button>
+    <button onclick="document.location='eventlistener.html'">
+      eventlistener
+    </button>
+    <script src="script.js"></script>
+  </body>
+</html>
+<script>
+  pageloadedfunction = () => {
+    alert("page loaded");
+  };
+  // onload = pageloadedfunction;
+
+  pageresizefunction = () => {
+    alert("page resized");
+  };
+  onresize = pageresizefunction;
+</script>

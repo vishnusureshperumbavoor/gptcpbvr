@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <h1>ONLY E00 ALLOWED</h1>
+    <form action="" onsubmit="return validate()">
+      Enter username
+      <input type="text" id="uname" placeholder="enter username" /><br />
+      <input type="submit" value="submit" />
+    </form>
+    <h1>BOTH EOO & eoo</h1>
+    <form action="" onsubmit="return validate4()">
+      Enter username
+      <input type="text" id="uname4" placeholder="enter username" /><br />
+      <input type="submit" value="submit" />
+    </form>
+
+    <h1>[sdp]imp ALLOWED</h1>
+    <form action="" onsubmit="return validate2()">
+      Enter username
+      <input type="text" id="uname2" placeholder="enter username" /><br />
+      <input type="submit" value="submit" />
+    </form>
+    <h1>[a - e]imp ALLOWED</h1>
+    <form action="" onsubmit="return validate3()">
+      Enter username
+      <input type="text" id="uname3" placeholder="enter username" /><br />
+      <input type="submit" value="submit" />
+    </form>
+
+    <button onclick="document.location='eventhandling.html'">
+      eventhandling
+    </button>
+  </body>
+</html>
+<script>
+  validate = () => {
+    var username = document.getElementById("uname");
+    var regx = new RegExp("EOO")
+    if (regx.test(username.value)) {
+      alert("valid username");
+      return true;
+    } else {
+      alert("invalid username");
+      return false;
+    }
+  };
+  validate4 = () => {
+    var username = document.getElementById("uname4").value;
+    // object oriented approach
+    var regx = new RegExp("EOO", "i");
+    if (regx.test(username)) {
+      alert("valid username");
+      return true;
+    } else {
+      alert("invalid username");
+      return false;
+    }
+  };
+  validate2 = () => {
+    var username = document.getElementById("uname2").value;
+    var regx = new RegExp("[sdp]imp");
+    if (regx.test(username)) {
+      alert("valid username");
+      return true;
+    } else {
+      alert("invalid username");
+      return false;
+    }
+  };
+  validate3 = () => {
+    var username = document.getElementById("uname3").value;
+    var regx = new RegExp("[a-e]imp");
+    if (regx.test(username)) {
+      alert("valid username");
+      return true;
+    } else {
+      alert("invalid username");
+      return false;
+    }
+  };
+
+  
+</script>

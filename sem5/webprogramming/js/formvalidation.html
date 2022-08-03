@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="return validate()">
+      Enter username
+      <input
+        type="text"
+        id="uname"
+        placeholder="enter username"
+        required
+      /><br />
+      <label id="vuname" style="color: red; visibility: hidden"
+        >Invalid username</label
+      ><br />
+      Enter password
+      <input
+        type="password"
+        id="pass"
+        placeholder="enter password"
+        required
+      /><br />
+      <label id="vpass" style="color: red; visibility: hidden"
+        >Invalid password</label
+      ><br />
+      <input type="submit" value="submit" />
+    </form>
+    <button onclick="document.location='eventhandling.html'">
+      eventhandling
+    </button>
+  </body>
+</html>
+<script>
+  validate = () => {
+    var username = document.getElementById("uname").value;
+    var password = document.getElementById("pass").value;
+    // only E00 works
+    var regx = /E00/;
+
+    // even e00 works
+    // var regx = /E00/i
+
+    // another form
+    // var regx = new RegExp("E00","i")
+    if (username.trim() == "") {
+      alert("username blank");
+      username.style.border = "solid 1px red";
+      document.getElementById("vuname").style.visibility = "visible";
+      return false;
+    } else if (regx.test(username)) {
+      alert("valid username");
+      return true;
+    } else {
+      alert("include E00 in username ");
+      username.style.border = "solid 1px red";
+      document.getElementById("vuname").style.visibility = "visible";
+      return false;
+    }
+  };
+</script>

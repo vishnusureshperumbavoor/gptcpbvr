@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Form Validation using addEventListener</h1>
+    <form action="" id="form">
+      Enter username
+      <input type="text" id="uname" placeholder="enter username" />
+      <div class="error"></div>
+      <br />
+      <label id="vuname" style="color: red; visibility: hidden"
+        >Invalid username</label
+      ><br />
+      Enter password
+      <input type="password" id="pass" placeholder="enter password" /><br />
+      <label id="vpass" style="color: red; visibility: hidden"
+        >Invalid password</label
+      >
+      <div class="error"></div>
+      <br />
+      <input type="submit" value="submit" />
+    </form>
+    <button onclick="document.location='eventhandling.html'">
+      eventhandling
+    </button>
+  </body>
+</html>
+<script>
+  var form = document.getElementById("form");
+  var username = document.getElementById("uname");
+  var password = document.getElementById("pass");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    validateInputs();
+  });
+  const validateInputs = () => {
+    const usernamevalue = username.value.trim();
+    const passwordvalue = password.value.trim();
+    if (usernamevalue == "") {
+      setError(username, "username is required");
+    } else {
+      setSucess(username);
+    }
+    if (passwordvalue == "") {
+      setError(password, "password is required");
+    } else {
+      setSucess(username);
+    }
+  };
+  const setError = (element, message) => {
+    const inputcontrol = element.parentElement;
+    const errorDisplay = inputcontrol.querySelector(".error");
+    errorDisplay.innerText = message;
+    inputcontrol.classList.add("error");
+    inputcontrol.classList.remove("success");
+  };
+  const setSuccess = (element) => {
+    const inputcontrol = element.parentElement;
+    const errorDisplay = inputcontrol.querySelector(".error");
+    errorDisplay.innerText = "";
+    inputcontrol.classList.add("success");
+  };
+</script>
