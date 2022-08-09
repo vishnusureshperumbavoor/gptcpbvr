@@ -6,6 +6,7 @@ class bubble{
     public:
         void enterelement();
         void bubblesort();
+        void swap(T*,T*);
 };
 template <typename T>
 void bubble<T> :: enterelement(){
@@ -22,9 +23,7 @@ void bubble<T> :: bubblesort(){
         bool flag=false;
         for(j=0;j<num-i-1;j++){
             if(arr[j]>arr[j+1]){
-                int temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
+                swap(&arr[j],&arr[j+1]);
                 flag=true;
             }
         }
@@ -37,6 +36,11 @@ void bubble<T> :: bubblesort(){
         cout << arr[i] << "\t";
     }
     cout << endl;
+}
+template <typename T>void bubble<T> :: swap(T* num1,T* num2){
+    T temp = *num1;
+    *num1 = *num2;
+    *num2 = temp;
 }
 int main(){
     bubble<int>b;
