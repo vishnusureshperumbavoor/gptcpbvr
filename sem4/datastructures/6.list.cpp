@@ -44,17 +44,13 @@ void list<T> :: show(){
 }
 template <class T>
 void list<T> :: find(T ele){
-    int flag=0;
     for(i=0;i<cnt;i++){
         if(arr[i]==ele){
-            flag++;
+            cout << "Element is in position " << i+1 << endl;
             break;
         }
     }
-    if(flag){
-        cout << "Element is in position " << i+1 << endl;
-        flag--;
-    }else{
+    if(i==cnt){
         cout << "Entered element not found" << endl;
     }
 }
