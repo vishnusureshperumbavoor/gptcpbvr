@@ -28,18 +28,15 @@ template <typename T>void sort<T> :: quicksort(int low,int high){
 }
 template <typename T>int sort<T> :: partition(int low,int high){
     T pivot = arr[low];
-    int up=high;
     int down=low;
+    int up=high;
     while(down<up){
-        while(arr[down]<=pivot && down<up){
+        while(arr[down]<=pivot && down<up)
             down++;
-        }
-        while(arr[up]>pivot){
+        while(arr[up]>pivot)
             up--;
-        }
-        if(down<up){
+        if(down<up)
             swap(&arr[down],&arr[up]);
-        }
     }
     swap(&arr[low],&arr[up]);
     return up;

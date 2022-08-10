@@ -12,17 +12,19 @@ class BST{
             right = r;
         }
     }*root;
-    public:
+    public :
     BST();
     void insert(T);
-    void del(T);
     void delbst(treenode *,T);
-    void preord();
-    void inord();
-    void postord();
+    void del(T);
+    void preorder();
+    void postorder();
     void inorder(treenode *);
+    void inord();
     void preorder(treenode *);
+    void preord();
     void postorder(treenode *);
+    void postord();
     int find(T);
     T findmin(treenode *);
 };
@@ -32,96 +34,100 @@ BST<T> :: BST(){
 }
 template <typename T>
 void BST<T> :: insert(T value){
-    treenode *p = root, *parent;
+    treenode *temp = new treenode(value);
+    treenode *p = root, *q;
     while(p!=NULL){
-        parent=p;
+        q=p;
         if(value < p->data)
             p = p->left;
         else
             p = p->right;
     }
     if(root==NULL)
-        root = new treenode(value);
-    else if(value < parent->data)
-        parent->left = new treenode(value);
+        root = temp;
+    else if(value< q->data)
+        q->left = temp;
     else
-        parent->right = new treenode(value);
+        q->right = temp;
 }
 template <typename T>
 int BST<T> :: find(T value){
     treenode *p = root;
     while(p!=NULL){
-        if(value < p->data)
-            p = p->left;
-        else if(value > p->data)
-            p = p->right;
-        else
+        if(p->data==value)
             break;
+        else if(value < p->data)
+            p = p->left;
+        else
+            p = p->right;
     }
-    if(p!=NULL)
+    if(p)
         return 1;
     else
         return 0;
 }
 template <typename T>
 void BST<T> :: del(T value){
-    delbst(root,value);
+    if(find(value))
+        delbst(root,value);
+    else
+        cout << "entered value doesnt exist" << endl;
 }
 template <typename T>
 void BST<T> :: delbst(treenode *temp,T value){
-    if(find(value)){
-        
-        treenode *parent;
-        while(temp->data!=value){
-            parent = temp;
-            if(value < temp->data)
-                temp = temp->left;
-            else
-                temp = temp->right;
-        }   
-        if(temp->left == NULL && temp->right == NULL){
-            if(temp==root){
-                delete root;
-                root = NULL;
-            }
-            else{
-                if(temp->data < parent->data)
-                    parent->left = NULL;
-                else
-                    parent->right = NULL;
-                delete temp;
-            }
+    treenode *q;
+    while(temp->data!=value){
+    q=temp;
+    if(value<temp->data)
+        temp=temp->left;
+    else
+        temp=temp->right;
+    }
+    
+    if(temp->left == NULL && temp->right == NULL){
+        if(temp==root){
+            delete root;
+            root = NULL;
         }
-        else if(temp->left!=NULL && temp->right == NULL){
-            if(temp==root)
-                root = temp->left;
-            else{
-                if(temp->data<parent->data)
-                    parent->left = temp->left;
-                else
-                    parent->right = temp->left;
-            }
+        else{
+            if(temp->data < q->data)
+                q->left = NULL;
+            else
+                q->right = NULL;
             delete temp;
         }
-        else if(temp->left==NULL && temp->right != NULL){
-            if(temp==root)
-                root = temp->right;
-            else{
-                if(temp->data<parent->data)
-                    parent->left = temp->right;
-                else
-                    parent->right = temp->right;
-            }
+    }
+    else if(temp->left!=NULL && temp->right == NULL){
+        if(temp==root){
+            root = temp->left;
             delete temp;
         }
         else{
-            T temp2 = findmin(temp->right);
-            delbst(temp,temp2);
-            temp->data = temp2;
+            if(temp->data<q->data)
+                q->left=temp->left;
+            else
+                q->right=temp->left;
+            delete temp;
         }
     }
-    else
-        cout << "entered value doesnt exist" << endl;
+    else if(temp->left==NULL && temp->right != NULL){
+        if(temp==root){
+            root = temp->right;
+            delete temp;
+        }
+        else{
+            if(temp->data<q->data)
+                q->left=temp->right;
+            else
+                q->right=temp->right;
+            delete temp;
+        }
+    }
+    else{
+        T temp2 = findmin(temp->right);
+        delbst(temp,temp2);
+        temp->data = temp2;
+    }
 }
 template <typename T>
 T BST<T> :: findmin(treenode *temp){
@@ -182,7 +188,7 @@ int main(){
     BST<int> b ;
     int num, data;
     while(num!=6){
-        cout << "\n1.insert\t2.delete\t3.preorder\t4.postorder\t5.inorder\t6.exit\t7.find" << endl;
+        cout << "1.insert\t2.delete\t3.preorder\t4.postorder\t5.inorder\t6.exit" << endl;
         cin >> num;
         switch(num){
             case 1:
@@ -203,14 +209,6 @@ int main(){
                 break;
             case 5:
                 b.inord();
-                break;
-            case 7:
-                cout << "enter the number to find" << endl;
-                cin >> data;
-                if(b.find(data))
-                    cout << data << " exists" << endl;
-                else 
-                    cout << data << " doesn't exists" << endl;
                 break;
         }
     }

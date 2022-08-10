@@ -8,8 +8,7 @@ class bubble{
         void bubblesort();
         void swap(T*,T*);
 };
-template <typename T>
-void bubble<T> :: enterelement(){
+template <typename T>void bubble<T> :: enterelement(){
     cout << "Enter the number of elements" << endl;
     cin >> num;
     cout << "Enter the elements" << endl;
@@ -17,8 +16,7 @@ void bubble<T> :: enterelement(){
         cin >> arr[i];
     }
 }
-template <typename T>
-void bubble<T> :: bubblesort(){
+template <typename T>void bubble<T> :: bubblesort(){
     for(i=0;i<num-1;i++){
         bool flag=false;
         for(j=0;j<num-i-1;j++){
