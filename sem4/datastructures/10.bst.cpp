@@ -34,21 +34,22 @@ BST<T> :: BST(){
 }
 template <typename T>
 void BST<T> :: insert(T value){
-    treenode *temp = new treenode(value);
-    treenode *p = root, *q;
-    while(p!=NULL){
-        q=p;
-        if(value < p->data)
-            p = p->left;
-        else
-            p = p->right;
-    }
     if(root==NULL)
-        root = temp;
-    else if(value< q->data)
-        q->left = temp;
-    else
-        q->right = temp;
+        root = new treenode(value);
+    else{
+        treenode *p = root, *q;
+        while(p!=NULL){
+            q=p;
+            if(value < p->data)
+                p = p->left;
+            else
+                p = p->right;
+        }
+        if(value< q->data)
+            q->left = new treenode(value);
+        else
+            q->right = new treenode(value);
+        }
 }
 template <typename T>
 int BST<T> :: find(T value){
