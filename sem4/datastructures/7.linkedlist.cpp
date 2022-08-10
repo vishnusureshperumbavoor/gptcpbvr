@@ -115,19 +115,16 @@ void linkedlist<T> :: removeNode(T pos){
 template <class T>
 void linkedlist<T> :: find(T data){
     node *temp = head;
-    int count = 0,flag=0;
+    int count = 0;
     while(temp!=NULL){
         count++;
         if(temp->data==data){
-            flag++;
+            cout << "entered data found at node " << count << endl;
             break;
         }
         temp = temp->link;
     }
-    if(flag){
-        cout << "entered data found at node " << count << endl;
-    }
-    else{
+    if(temp==NULL){
         cout << "entered data not found" << endl;
     }
 }
