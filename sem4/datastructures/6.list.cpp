@@ -10,10 +10,23 @@ class list{
         void show();
         void find(T);
         void findkth(T);
+        int isfull();
+        int isempty();
 };
-template <class T>
-list<T> :: list(){
+template <class T>list<T> :: list(){
     cnt = 0;
+}
+template <class T>int list<T> :: isfull(){
+    if(cnt==5)
+        return 1;
+    else 
+        return 0;
+}
+template <class T>int list<T> :: isempty(){
+    if(cnt==0)
+        return 1;
+    else 
+        return 0;
 }
 template <class T>
 T list<T> :: insert(T ele,T pos){
@@ -67,7 +80,7 @@ int main(){
         cin >> num;
         switch(num){
             case 1:
-                if(l.cnt==5){
+                if(l.isfull()){
                     cout << "list is full" << endl;
                 }else{
                     l.cnt++;
@@ -77,7 +90,7 @@ int main(){
                 }
                 break;
             case 2:
-                if(l.cnt==0){
+                if(l.isempty()){
                     cout << "list is empty" << endl;
                 }else{
                     cout << "Enter the position" << endl;
@@ -87,7 +100,7 @@ int main(){
                 
                 break;
             case 3:
-                if(l.cnt==0){
+                if(l.isempty()){
                     cout << "list is empty" << endl;
                 }else{
                     cout << "Elements in the list - " << endl;
@@ -95,7 +108,7 @@ int main(){
                 }
                 break;
             case 4:
-                if(l.cnt==0){
+                if(l.isempty()){
                     cout << "list is empty" << endl;
                 }else{
                     cout << "Enter the element to find" << endl;
@@ -104,7 +117,7 @@ int main(){
                 }
                 break;
             case 5:
-                if(l.cnt==0){
+                if(l.isempty()){
                     cout << "list is empty" << endl;
                 }else{
                     cout << "Enter the position" << endl;
@@ -113,7 +126,7 @@ int main(){
                 }
                 break;
             case 6:
-                exit(1);
+                exit(0);
             default:
                 cout << "Enter any valid number" << endl;
                 break;
