@@ -8,3 +8,4 @@ else if{}                   elif :
 for(i=1;i<=10;i++){}        for i in range(1,11):
 for(i=1;i<=10;i=i+2){}      for i in range(1,11,2):
 51/10 = 5                   51/10 = 5.1       51//10 = 5
+void sum(num){}             def sum(num):
