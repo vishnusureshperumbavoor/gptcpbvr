@@ -26,8 +26,7 @@ template <typename T>void graph<T>::readgraph(){
     cout << "Enter the edges" << endl; 
     for(i=0;i<eno;i++){
         cin >> efrom >> eto;
-        arr[efrom][eto] = 1;
-        arr[eto][efrom] = 1;
+        arr[efrom][eto] = arr[eto][efrom] = 1;
     }
 }
 template <typename T>void graph<T>::adjacencymatrix(){
@@ -50,7 +49,7 @@ template <typename T>void graph<T>::dfs(){
     s.push(0);
     visited[0]=true;
     while(!s.isEmpty()){
-        temp=s.pop();
+        temp = s.pop();
         cout << temp << "\t";
         for(i=0;i<nodes;i++){
             if(arr[temp][i]==1){
@@ -76,10 +75,8 @@ template <typename T>void graph<T>::bfs(){
         temp=q.Delete();
         cout << temp << "\t";
         for(i=0;i<nodes;i++){
-            // cout << "loop no " << i << endl;
             if(arr[temp][i]==1){
                 if(visited[i]==false){
-                    // cout << " inserted i = " << i << endl;
                     q.Insert(i);
                     visited[i]=true;
                 }

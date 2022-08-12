@@ -134,7 +134,7 @@ template <typename T>
 T BST<T> :: findmin(treenode *temp){
     if(temp == NULL){
         cout << "error";
-        return -1;
+        return 0;
     }
     while(temp->left!=NULL)
         temp = temp->left;
