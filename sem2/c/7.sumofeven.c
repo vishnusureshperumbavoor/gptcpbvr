@@ -15,3 +15,5 @@ void main(){
     }
     printf("sum of integers = %d\n",sum);
 }
+
+// problem if we dont set sum=0

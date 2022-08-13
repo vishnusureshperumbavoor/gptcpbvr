@@ -4,9 +4,10 @@
 c doesnt have string keyword.       c++  - string name        c - char name[20]
 scanf("%d",&num)       scanf("%s",num)  (no need of & for strings)
 
-if sum action performed on the right side. 
-sum=0 for 1 dimensional     sum[i]=0 for 2 dimensional      sum[i][j]=0 for 3 dimensional
-reference     -   7.sumofeven.c  8.matrixmultiplication.c    12.structure.c (sum on right)   13.matrixaddition.c (no sum on right)
+declaration of sum=0
+7.sumofeven.c (sum=0) 8.matrixmultiplication.c (mul[i][j]=0)   -   because addition starts from right side   
+12.structure.c -  if structure is static. no need to declare s[i].total = 0. if the structure is not static declare s[i].total = 0
+13.matrixaddition.c - additon on the left side. so no need to declare sum[i][j]=0
 
 #Primary Numbers
 2,3,5,7,11,13,17,19,23,29
@@ -25,7 +26,7 @@ matrix addition - the number of rows & columns of the 1st matrix should be equal
 
 #string functions
 1. strlen (length) -            s : elon musk                               strlen(s) : 9
-2. strcat (concatenation) -     s1 : elon      s2 : musk                     strcat(s1,s2) : elonmusk 
+2. strcat (concatenation) -     s1 : elon      s2 : musk             strcat(s1,s2) : elonmusk       strcat(s2,s1) : muskelon 
 3. strcpy (copy) -              s1 : elon      s2 :                           strcpy(s1,s2)      puts(s2) : elon
 4. strcmp (compare) (XOR gate)  s1 : elon      s2 : elon      s3 : Elon    s4 : elonmusk   
                                 strcmp(s1,s2) : 0       strcmp(s1,s3) : 1               strcmp(s1,s4) : -1

@@ -1,4 +1,4 @@
-// 1st string - elon    2nd string - musk   concatenated - elon musk
+// s1 : elon      s2 : musk       strcat(s1,s2) : elonmusk       strcat(s2,s1) : muskelon 
 #include <stdio.h>
 void main(){
     char s1[10],s2[10];

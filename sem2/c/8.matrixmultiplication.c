@@ -1,4 +1,5 @@
-// matrix - singular            matrices - plural 
+// matrix - singular            matrices - plural
+// number of rows of the 1st matrix should be equal to the number of columns of the 2nd matrix
 #include <stdio.h>
 int r1,c1,r2,c2,i,j,k,m1[10][10],m2[10][10],mul[10][10];
 void main(){

@@ -1,3 +1,4 @@
+// s = (a+b+c)/2        sqrt(s*(s-a)*(s-b)*(s-c))
 #include <stdio.h>
 #include <math.h>
 void main(){

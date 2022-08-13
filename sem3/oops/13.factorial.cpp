@@ -1,5 +1,6 @@
 // num = 5          factorial = 5*4*3*2*1      ||       1*2*3*4*5
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 int factorial(int num){
     if(num==1)
         return 1;
@@ -9,24 +10,26 @@ int factorial(int num){
 void main(){
     int num,i=1;
     // while loop
-    printf("enter a number\n");
-    scanf("%d",&num);
+    cout << "enter a number\n";
+    cin >> num;
+    //5*4*3*2*1
     while(num>=1){
         i*=num;
         num--;
     }
-    printf("factorial = %d\n",i);
+    cout << "factorial = " << i << endl;
 
     // forloop
     int fact=1;
-    printf("enter a number\n");
-    scanf("%d",&num);
+    cout << "enter a number\n";
+    cin >> num;
+    //1*2*3*4*5
     for(i=1;i<=num;i++)
         fact*=i;
-    printf("factorial = %d\n",i);
+    cout << "factorial = " << i << endl;
 
     // recursive 
-    printf("enter a number\n");
-    scanf("%d",&num);
-    printf("factorial = %d",factorial(num));
+    cout << "enter a number\n";
+    cin >> num;
+    cout << "factorial = " << factorial(num) << endl;
 }
