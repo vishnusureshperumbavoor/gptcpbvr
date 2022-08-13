@@ -1,7 +1,8 @@
-#c                           #python
-%.2f                        "{:.2f}".format(num)         = 6.00 else 6.00000000 
+# 2 digits after decimal
+%.2f 
+# string keyword
+no string keyword.         char name[20]
 
-c doesnt have string keyword.       c++  - string name        c - char name[20]
 scanf("%d",&num)       scanf("%s",num)  (no need of & for strings)
 
 declaration of sum=0
