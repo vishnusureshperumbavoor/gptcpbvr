@@ -6,22 +6,22 @@ int factorial(int num){
         return num*factorial(num-1);
 }
 void main(){
-    int num,fact=1;
+    int num,i=1;
     // while loop
     printf("enter a number\n");
     scanf("%d",&num);
     while(num>=1){
-        fact*=num;
+        i*=num;
         num--;
     }
-    printf("factorial = %d\n",fact);
+    printf("factorial = %d\n",i);
 
     // forloop
     printf("enter a number\n");
     scanf("%d",&num);
-    for(fact=1;num>=1;num--)
-        fact*=num;
-    printf("factorial = %d\n",fact);
+    for(i=1;num>=1;num--)
+        i*=num;
+    printf("factorial = %d\n",i);
 
     // recursive 
     printf("enter a number\n");
