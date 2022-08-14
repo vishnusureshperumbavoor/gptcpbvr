@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="alert('single clicked thsi shit')">onclick</button>
+    <select name="" id="onchange">
+      <option value="opt1">onchange1</option>
+      <option value="opt2">onchange2</option>
+    </select>
+    <button ondblclick="alert('double clicked thsi shit')">ondblclick</button>
+    <br /><br />
+    <form action="" id="onsubmit">
+      enter name <input type="text" /> enter crush name <input type="text" />
+      <input type="submit" value="onsubmit" />
+    </form>
+    <h2>
+      event handling - handling the events such as clicks, changes, submission,
+      resize and loading
+    </h2>
+    <h3>onclick - when clicking</h3>
+    <h3>onchange - during changes. ex on radiobutton or checkbox</h3>
+    <h3>onsubmit - try form submission</h3>
+    <h3>ondblclick - when double clicking</h3>
+    <h3>onresize - try page resize</h3>
+    <h3>onload - onload disabled. its annoying</h3>
+    <button onclick="document.location='2.formvalidation.html'">
+      go to form validation page
+    </button>
+  </body>
+</html>
+<script>
+  var change = document.getElementById("onchange");
+  var submit = document.getElementById("onsubmit");
+  change.onchange = () => {
+    alert("onchange enabled");
+  };
+  submit.onsubmit = () => {
+    alert("form submitted");
+  };
+  pageloadedfunction = () => {
+    alert("page loaded");
+  };
+  // onload = pageloadedfunction;
+  pageresizefunction = () => {
+    alert("page resized");
+  };
+  onresize = pageresizefunction;
+</script>
