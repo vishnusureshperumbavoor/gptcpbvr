@@ -46,15 +46,13 @@ void linkedlist<T> :: list(){
 }
 int main(){
     linkedlist<int> l;
-    int num,data;
+    int num;
     while(num!=4){
-        // cout << "1.PUSH\n2.POP\n3.List\n4.Exit" << endl;
         cin >> num;
         switch(num){
             case 1:
-                cout << "enter the data to push" << endl;
-                cin >> data;
-                l.push(data);
+                cin >> num;
+                l.push(num);
                 break;
             case 2:
                 cout << l.pop() << endl;

@@ -10,5 +10,3 @@ software routine that process actions such as keystroke & mouse movement.
 <strong> JAVASCRIPT VALIDATIONS <strong>
 1. checking whether a form in empty or not
 2. should not login by entering spaces
-
-<strong> JAVASCRIPT REGULAR EXPRESSIONS <strong>

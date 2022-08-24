@@ -5,10 +5,11 @@ template <class T>class sort{
     int size,i,j;
     public :
         void enterelements();
+        void quick();
         void quicksort(int,int);
         int partition(int,int);
         void swap(T*,T*);
-        void sortedlist();
+        void display();
 };
 template <typename T>void sort<T> :: enterelements(){
     cout << "Enter the number of Elements" << endl;
@@ -17,6 +18,8 @@ template <typename T>void sort<T> :: enterelements(){
     for(i=0;i<size;i++){
         cin >> arr[i];
     }
+}
+template <typename T>void sort<T> :: quick(){
     quicksort(0,size-1);
 }
 template <typename T>void sort<T> :: quicksort(int low,int high){
@@ -41,7 +44,7 @@ template <typename T>int sort<T> :: partition(int low,int high){
     swap(&arr[low],&arr[up]);
     return up;
 }
-template <typename T>void sort<T> :: sortedlist(){
+template <typename T>void sort<T> :: display(){
     cout << "Sorted List" << endl;
     for(i=0;i<size;i++){
         cout << arr[i] << "\t";
@@ -56,5 +59,6 @@ template <typename T>void sort<T> :: swap(T* num1,T* num2){
 int main(){
     sort<int> s;
     s.enterelements();
-    s.sortedlist();
+    s.quick();
+    s.display();
 }

@@ -7,6 +7,7 @@ class bubble{
         void enterelement();
         void bubblesort();
         void swap(T*,T*);
+        void display();
 };
 template <typename T>void bubble<T> :: enterelement(){
     cout << "Enter the number of elements" << endl;
@@ -29,6 +30,8 @@ template <typename T>void bubble<T> :: bubblesort(){
             break;
         }
     }
+}
+template <typename T>void bubble<T> :: display(){
     cout << "Sorted List" << endl;
     for(i=0;i<num;i++){
         cout << arr[i] << "\t";
@@ -44,4 +47,5 @@ int main(){
     bubble<int>b;
     b.enterelement();
     b.bubblesort();
+    b.display();
 }

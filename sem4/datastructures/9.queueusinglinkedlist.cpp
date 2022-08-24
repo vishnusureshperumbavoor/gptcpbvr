@@ -36,9 +36,10 @@ void linkedlist<T> :: insert(T data){
 template <typename T>
 void linkedlist<T> :: delqueue(){
     node *temp = head;
+    T data = temp->data;
     head = head->next;
-    cout << temp->data << endl;
     delete temp;
+    return data;
 }
 template <typename T>
 void linkedlist<T> :: list(){
@@ -51,13 +52,13 @@ void linkedlist<T> :: list(){
 }
 int main(){
     linkedlist<int> l;
-    int num,data;
+    int num;
     while(num!=4){
         cin >> num;
         switch(num){
         case 1:
-            cin >> data;
-            l.insert(data);
+            cin >> num;
+            l.insert(num);
             break;
         case 2:
             l.delqueue();

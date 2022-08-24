@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
 template <class T>
-class binary{
+class search{
     int data,size,i,mid;
     T arr[10];
     public:
         void enterelement();
-        void search();
-        void searchelement(int,int,int);
+        void binary(T);
+        void binarysearch(int,int,int);
 };
 template <typename T>
-void binary<T> :: enterelement(){
+void search<T> :: enterelement(){
     cout << "Enter the number of elements" << endl;
     cin >> size;
     cout << "Enter the elements" << endl;
@@ -19,13 +19,11 @@ void binary<T> :: enterelement(){
     }
 }
 template <typename T>
-void binary<T> :: search(){
-    cout << "Search Element" << endl;
-    cin >> data;
-    searchelement(0,size-1,data);
+void search<T> :: binary(T data){
+    binarysearch(data,0,size-1);
 }
 template <typename T>
-void binary<T> :: searchelement(int low,int high,int data){
+void search<T> :: binarysearch(int data,int low,int high){
     mid = (low+high)/2;
     if(low>high){
         cout << data << " does not found" << endl;
@@ -41,7 +39,10 @@ void binary<T> :: searchelement(int low,int high,int data){
     }
 }
 int main(){
-    binary <int> b;
+    int data;
+    search <int> b;
     b.enterelement();
-    b.search();
+    cout << "Search Element" << endl;
+    cin >> data;
+    b.binary(data);
 }
