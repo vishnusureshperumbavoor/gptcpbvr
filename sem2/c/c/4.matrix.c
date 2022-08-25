@@ -1,15 +1,15 @@
 #include <stdio.h>
 void main(){
-    int a[2][3],*p,i,j,row=2,col=3;
+    int a[2][3],*p,i,j;
     printf("enter 2*3 matrix\n");
-    for(i=0;i<row;i++){
-        for(j=0;j<col;j++)
+    for(i=0;i<2;i++){
+        for(j=0;j<3;j++)
             scanf("%d",&a[i][j]);
     }
     p=&a[0][0];
-    for(i=0;i<row;i++){
-        for(j=0;j<col;j++)
-            printf("%d\t",*((p+i*col)+j));
+    for(i=0;i<2;i++){
+        for(j=0;j<3;j++)
+            printf("%d\t",*((p+i*3)+j));
         printf("\n");
     }
 }

@@ -1,4 +1,3 @@
-// printing matrix using pointer
 #include <stdio.h>
 void display(int *arr,int row,int col){
     int i,j;
@@ -8,7 +7,7 @@ void display(int *arr,int row,int col){
         printf("\n");
     }
 }
-void print(int arr[][10],int row,int col){
+void print(int arr[][3],int row,int col){
     int i,j;
     for(i=0;i<row;i++){
         for(j=0;j<col;j++)

@@ -7,7 +7,7 @@ class linkedlist{
         T data;
         node *next;
         public :
-        node(T d,node *n){
+        node(T d,node *n=NULL){
             data = d;
             next = n;
         }
