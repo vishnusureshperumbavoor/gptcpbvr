@@ -1,6 +1,6 @@
 import java.sql.*;
 import javax.swing.table.DefaultTableModel;
-PreparedStatement pst;
+Statement stmt;
 Connection conn;
 ResultSet rs;
 DefaultTableModel dtm;
@@ -17,9 +17,9 @@ String name = txtname.getText();
 String price = txtprice.getText();
 try{
     String sql = "insert into stocks values ("+null+",'"+name+"','"+price+"')";
-    pst = conn.prepareStatement(sql);
-    int rs = pst.executeUpdate();
-    if(rs==1){
+    stmt = conn.createStatement();
+    rs = stmt.executeUpdate(sql);
+    if(rs.next()){
         fetch();
     }
 }
@@ -30,8 +30,8 @@ catch(Exception e){
 // READ 
 try{
     String sql = "select *,price*shares as marketCap from stocks";
-    pst = conn.prepareStatement(sql);
-    rs = stmt.executeQuery();
+    stmt = conn.createStatement();
+    rs = stmt.executeQuery(sql);
     dtm = (DefaultTableModel)tblstocks.getModel();
     dtm.setRowCount(0);
     while(rs.next()){
@@ -56,9 +56,9 @@ String price = txtprice.getText();
         
 try{
     String sql = "update stocks set name='"+name+"',price='"+price+"' where stockid='"+id+"'";
-    pst = conn.prepareStatement(sql);
-    int rs = pst.executeUpdate();               
-    if(rs==1){
+    stmt = conn.createStatement();
+    rs = pst.executeUpdate(sql);               
+    if(rs.next()){
         fetch();
     }
 }
@@ -74,9 +74,9 @@ int dialogResult = JOptionPane.showConfirmDialog(null,"do u want to delete","war
 if(dialogResult==JOptionPane.YES_OPTION){
     try{
         String sql = "delete from stocks where stockid='"+id+"'";
-        pst = conn.prepareStatement(sql);
-        int rs = pst.executeUpdate();               
-        if(rs==1){
+        stmt = conn.prepareStatement();
+        rs = pst.executeUpdate(sql);               
+        if(rs.next()){
             fetch();
         }
     }
