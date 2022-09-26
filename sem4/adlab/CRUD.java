@@ -29,7 +29,7 @@ catch(Exception e){
 
 // READ 
 try{
-    String sql = "select *,price*shares as marketCap from stocks";
+    String sql = "select * from stocks";
     stmt = conn.createStatement();
     rs = stmt.executeQuery(sql);
     dtm = (DefaultTableModel)tblstocks.getModel();
