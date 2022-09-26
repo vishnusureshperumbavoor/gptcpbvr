@@ -32,10 +32,10 @@ void search<T> :: binarysearch(int data,int low,int high){
         cout << "Element found in position " << mid+1 << endl;
     }
     else if(data<arr[mid]){
-        searchelement(low,mid-1,data);
+        binarysearch(low,mid-1,data);
     }
     else{
-        searchelement(mid+1,high,data);
+        binarysearch(mid+1,high,data);
     }
 }
 int main(){
