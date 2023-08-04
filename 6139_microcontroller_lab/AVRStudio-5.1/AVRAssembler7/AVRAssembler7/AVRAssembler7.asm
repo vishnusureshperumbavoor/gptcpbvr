@@ -1,0 +1,13 @@
+.include "m32def.inc"
+ldi r16,0x00
+ldi r17,'Y'
+ldi r18,'N'
+ldi r20,0xff
+out ddrb,r16
+out ddrd,r20
+sbis pinb,2
+rjmp l1
+out portd,r17
+rjmp end
+l1:out portd,r18
+end:rjmp end
