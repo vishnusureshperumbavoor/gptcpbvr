@@ -4,8 +4,7 @@ using namespace std;
 class A{
     int num1,num2;
     public:
-    A():num1(0),num2(0){}
-    A(int n1,int n2){
+    void setdata(int n1,int n2){
         num1 = n1;
         num2 = n2;
     }
@@ -21,7 +20,9 @@ class A{
 };
 
 int main(){
-    A a1(2,3), a2(5,6), a3;
+    A a1, a2, a3;
+    a1.setdata(2,3);
+    a2.setdata(5,6);
     a1.getdata();
     a2.getdata();
     a3 = a1 * a2;
